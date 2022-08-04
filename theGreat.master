@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="theGreat.master.cs" Inherits="theGreat" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+            TheGreat
+        </asp:ContentPlaceHolder>
+    </title>
+    <link href="mycss.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="menu">
+
+            <div class="icon2">
+                <ul>
+                <li>
+                    <asp:Label ID="Label1" runat="server" Text="theGreat ." Font-Bold="True" Font-Italic="True" Font-Size="XX-Large"></asp:Label>
+                </li>
+                    <li>
+                        <asp:DropDownList ID="DropDownList1" Visible="false" runat="server" AutoPostBack="True" Height="30px" Width="137px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" CssClass="button1">
+                        </asp:DropDownList>
+                    </li>
+                    <li>
+                    <asp:DropDownList ID="studDrop" runat="server" AutoPostBack="True" OnSelectedIndexChanged="studDrop_SelectedIndexChanged" Visible="False" CssClass="button1" Width="100%">
+                        <asp:ListItem>Select Option</asp:ListItem>
+                        <asp:ListItem>Check Seat Allocation</asp:ListItem>
+                        <asp:ListItem>Update Profile</asp:ListItem>
+                    </asp:DropDownList>
+                    </li>
+                    </ul>
+            </div>
+            
+            <div class="icon">
+            <ul >
+                <li><asp:HyperLink ID="Contact" runat="server" NavigateUrl="~/contact.aspx" Text="Contact"></asp:HyperLink>
+                </li>
+                  <li>
+                      <asp:HyperLink ID="About" runat="server" NavigateUrl="~/about.aspx" Text="About"></asp:HyperLink>
+                      </li>
+                
+                <li>
+                   <asp:HyperLink ID="Homepage" runat="server" NavigateUrl="~/homepage.aspx" Text="Homepage"></asp:HyperLink>
+                    </li>
+                <li>
+                     <asp:HyperLink ID="login" runat="server" NavigateUrl="~/login.aspx" Text="Login"></asp:HyperLink>
+                    </li>
+                <li >
+                    <%--<asp:Button ID="Button1" runat="server" Text="Register"  CssClass="button2" OnClick="Button1_Click" />--%>
+                    <asp:HyperLink ID="Button1" runat="server" NavigateUrl="~/registration.aspx" >Register</asp:HyperLink>
+                   </li>
+                </ul>
+                </div>
+             </div>
+        <div class="wreper">
+            
+        
+            
+            <div class="content">
+                
+        <asp:ContentPlaceHolder id="body" runat="server">
+        
+
+
+
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server">
+
+            </asp:SqlDataSource>
+           
+       
+        </asp:ContentPlaceHolder>
+        
+                
+</div>
+            <%-- <div class="wreper1">
+                <asp:ContentPlaceHolder id="CreatingSeats" runat="server">
+
+                </asp:ContentPlaceHolder>
+
+       </div>--%>
+         </div>
+    </form>
+    <div class="rightbox" >
+             <h2>Copyright@theGreat 2019</h2>
+        </div>
+</body>
+</html>
